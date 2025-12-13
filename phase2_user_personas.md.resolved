@@ -1,0 +1,143 @@
+# Phase 2: UX and UI Design
+## Step 4: User Personas
+
+---
+
+## Persona 1: Sarah Chen - Healthcare Administrator
+
+![Healthcare Administrator](https://via.placeholder.com/150x150/2563EB/FFFFFF?text=SC)
+
+### Demographics
+- **Age:** 42
+- **Role:** Director of Operations, Mid-sized Regional Hospital (250 beds)
+- **Experience:** 15 years in healthcare administration
+- **Technical Proficiency:** Intermediate (comfortable with Excel, EMR systems, basic analytics tools)
+- **Location:** Urban hospital, manages 3 departments
+
+### Goals
+1. **Get a quick overview** of hospital operations every morning (5-minute dashboard check)
+2. **Identify bottlenecks** in patient flow and resource allocation
+3. **Generate executive reports** for board meetings without manual data compilation
+4. **Monitor budget performance** and revenue metrics in real-time
+
+### Pain Points
+- Currently logs into **6 different systems** to get complete operational picture
+- Spends **2-3 hours daily** compiling reports from disparate sources
+- Cannot quickly identify which department needs immediate attention
+- Struggles to explain trends to non-technical executives
+
+### Motivations
+- Improve patient outcomes through data-driven resource allocation
+- Reduce administrative burden on staff
+- Demonstrate ROI and operational efficiency to leadership
+
+### Technology Usage
+- **Devices:** Desktop (70%), iPad (25%), iPhone (5%)
+- **Peak Usage Times:** 7-9 AM, 12-1 PM, 4-6 PM
+- **Preferred Features:** Visual dashboards, one-click exports, automated alerts
+
+### Key User Scenarios
+1. **Morning Routine:** Checks overnight admissions, bed availability, and any critical alerts
+2. **Weekly Review:** Analyzes 7-day trends in wait times, staff utilization, and revenue
+3. **Emergency Response:** Quickly assesses capacity during unexpected surge (e.g., flu season)
+
+---
+
+## Persona 2: Dr. Marcus Williams - Clinical Manager
+
+![Clinical Manager](https://via.placeholder.com/150x150/22C55E/FFFFFF?text=MW)
+
+### Demographics
+- **Age:** 38
+- **Role:** Emergency Department Clinical Manager
+- **Experience:** 12 years clinical practice, 3 years in management
+- **Technical Proficiency:** Advanced (uses multiple clinical systems, comfortable with data tools)
+- **Location:** Busy urban ED, 500+ monthly visits
+
+### Goals
+1. **Optimize patient flow** through the ED (reduce wait times, improve throughput)
+2. **Monitor staff workload** and prevent burnout
+3. **Track quality metrics** (patient satisfaction, door-to-doctor time, readmission rates)
+4. **Make real-time staffing decisions** based on current patient volume
+
+### Pain Points
+- Current EMR dashboard is **slow and not designed for real-time monitoring**
+- Cannot see granular data by shift or provider
+- Needs IT support to generate custom reports
+- Misses critical trends because data is only available at end of day
+
+### Motivations
+- Deliver excellent patient care efficiently
+- Support and protect clinical team from overwork
+- Use data to advocate for additional resources when needed
+
+### Technology Usage
+- **Devices:** Desktop at workstation (50%), Mobile phone (30%), Tablet during rounds (20%)
+- **Peak Usage Times:** Throughout shift (6 AM - 6 PM), on-call evenings
+- **Preferred Features:** Real-time updates, drill-down by provider/shift, mobile access
+
+### Key User Scenarios
+1. **Shift Handoff:** Reviews past 8 hours before briefing incoming team
+2. **Mid-Shift Check:** Monitors current ED census, bed requests, and average wait time
+3. **Quality Review:** Analyzes monthly trends to identify improvement opportunities
+
+---
+
+## Persona 3: Emily Rodriguez - Data Analyst
+
+![Data Analyst](https://via.placeholder.com/150x150/F59E0B/FFFFFF?text=ER)
+
+### Demographics
+- **Age:** 29
+- **Role:** Healthcare Data Analyst, Hospital Analytics Department
+- **Experience:** 5 years in healthcare analytics
+- **Technical Proficiency:** Expert (Python, R, SQL, Tableau, Power BI)
+- **Location:** Corporate analytics office, supports multiple facilities
+
+### Goals
+1. **Perform deep-dive analysis** on operational and clinical data
+2. **Build predictive models** for patient admissions, readmissions, and resource needs
+3. **Export clean datasets** for statistical analysis and modeling
+4. **Create custom visualizations** for stakeholder presentations
+
+### Pain Points
+- Current systems only provide **pre-built reports** with limited customization
+- Data export is manual and time-consuming (CSV downloads, data cleaning)
+- Cannot access raw data directly without contacting IT
+- Lacks API access for automation and integration with analytical tools
+
+### Motivations
+- Uncover actionable insights that improve patient care and efficiency
+- Build reputation as strategic partner to clinical and operational leaders
+- Automate repetitive tasks to focus on high-value analysis
+
+### Technology Usage
+- **Devices:** Desktop workstation (95%), Laptop (5%)
+- **Peak Usage Times:** 9 AM - 5 PM (standard business hours)
+- **Preferred Features:** API access, advanced filters, SQL/Python integration, bulk exports
+
+### Key User Scenarios
+1. **Quarterly Analysis:** Pulls 3 months of data to identify seasonal trends
+2. **Ad-Hoc Requests:** Executive asks for specific metric breakdown by department and time period
+3. **Model Development:** Exports historical data to build admission forecasting model
+
+---
+
+## Summary: Persona Comparison
+
+| Attribute | Sarah (Admin) | Marcus (Clinical) | Emily (Analyst) |
+|-----------|---------------|-------------------|-----------------|
+| **Primary Goal** | Operational overview | Real-time patient flow | Deep data analysis |
+| **Usage Frequency** | 3-4 times daily | Continuous during shift | Daily, extended sessions |
+| **Technical Skill** | Intermediate | Advanced | Expert |
+| **Key Metric** | Cost per patient | Wait time | Predictive accuracy |
+| **Device** | Desktop + iPad | Mobile-first | Desktop only |
+| **Feature Priority** | Simplicity, alerts | Real-time, mobile | Customization, API |
+
+---
+
+> [!TIP]
+> **Design Implication**: The dashboard should support **3 distinct interaction modes**:
+> - **Executive View** (Sarah): High-level KPIs, visual cards, one-click exports
+> - **Operational View** (Marcus): Real-time updates, drill-downs, mobile-responsive
+> - **Analytical View** (Emily): Advanced filters, raw data access, export options

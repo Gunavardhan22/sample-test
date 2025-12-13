@@ -1,0 +1,609 @@
+# Phase 3: Visual Design System
+## Healthcare Admin Dashboard UI Kit
+
+---
+
+## Color Palette
+
+### Primary Colors
+
+```css
+/* Brand - Professional Blue */
+--color-primary-50:  #EFF6FF;
+--color-primary-100: #DBEAFE;
+--color-primary-200: #BFDBFE;
+--color-primary-300: #93C5FD;
+--color-primary-400: #60A5FA;
+--color-primary-500: #3B82F6;  /* Main primary */
+--color-primary-600: #2563EB;  /* Hover state */
+--color-primary-700: #1D4ED8;
+--color-primary-800: #1E40AF;
+--color-primary-900: #1E3A8A;
+```
+
+### Secondary Colors
+
+```css
+/* Slate - Professional, Clinical Feel */
+--color-secondary-50:  #F8FAFC;
+--color-secondary-100: #F1F5F9;
+--color-secondary-200: #E2E8F0;
+--color-secondary-300: #CBD5E1;
+--color-secondary-400: #94A3B8;
+--color-secondary-500: #64748B;
+--color-secondary-600: #475569;
+--color-secondary-700: #334155;  /* Main secondary */
+--color-secondary-800: #1E293B;
+--color-secondary-900: #0F172A;
+```
+
+### Semantic Colors
+
+```css
+/* Success - Green */
+--color-success-light: #D1FAE5;
+--color-success: #22C55E;
+--color-success-dark: #16A34A;
+
+/* Warning - Amber */
+--color-warning-light: #FEF3C7;
+--color-warning: #F59E0B;
+--color-warning-dark: #D97706;
+
+/* Error - Red */
+--color-error-light: #FEE2E2;
+--color-error: #EF4444;
+--color-error-dark: #DC2626;
+
+/* Info - Cyan */
+--color-info-light: #CFFAFE;
+--color-info: #06B6D4;
+--color-info-dark: #0891B2;
+```
+
+### Neutral Colors
+
+```css
+/* Backgrounds & Text */
+--color-white: #FFFFFF;
+--color-gray-50: #F9FAFB;
+--color-gray-100: #F3F4F6;
+--color-gray-200: #E5E7EB;
+--color-gray-300: #D1D5DB;
+--color-gray-400: #9CA3AF;
+--color-gray-500: #6B7280;
+--color-gray-600: #4B5563;
+--color-gray-700: #374151;
+--color-gray-800: #1F2937;
+--color-gray-900: #111827;
+--color-black: #000000;
+```
+
+---
+
+## Typography
+
+### Font Family
+
+**Primary Font:** [Inter](https://fonts.google.com/specimen/Inter) (Google Fonts)
+- Excellent readability for data-heavy interfaces
+- Modern, professional aesthetic
+- Wide range of weights
+
+**Monospace Font:** JetBrains Mono (for code/data tables)
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+```
+
+### Type Scale
+
+```css
+/* Display - Hero sections */
+--font-size-display: 48px;   /* 3rem */
+--line-height-display: 1.1;
+
+/* Headings */
+--font-size-h1: 32px;  /* 2rem */
+--font-size-h2: 24px;  /* 1.5rem */
+--font-size-h3: 20px;  /* 1.25rem */
+--font-size-h4: 18px;  /* 1.125rem */
+
+/* Body */
+--font-size-base: 16px;     /* 1rem - Default */
+--font-size-lg: 18px;       /* 1.125rem */
+--font-size-sm: 14px;       /* 0.875rem */
+--font-size-xs: 12px;       /* 0.75rem */
+
+/* Line Heights */
+--line-height-tight: 1.25;
+--line-height-normal: 1.5;
+--line-height-relaxed: 1.75;
+```
+
+### Font Weights
+
+```css
+--font-weight-light: 300;
+--font-weight-normal: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+--font-weight-extrabold: 800;
+```
+
+### Usage Examples
+
+```css
+/* Page Titles */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  line-height: var(--line-height-tight);
+}
+
+/* Section Headers */
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+}
+
+/* Body Text */
+body {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-gray-700);
+  line-height: var(--line-height-normal);
+}
+
+/* Captions / Helper Text */
+.caption {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+```
+
+---
+
+## Spacing Scale
+
+Based on 4px base unit for consistency:
+
+```css
+--spacing-0: 0px;
+--spacing-1: 4px;
+--spacing-2: 8px;
+--spacing-3: 12px;
+--spacing-4: 16px;
+--spacing-5: 20px;
+--spacing-6: 24px;
+--spacing-8: 32px;
+--spacing-10: 40px;
+--spacing-12: 48px;
+--spacing-16: 64px;
+--spacing-20: 80px;
+--spacing-24: 96px;
+```
+
+### Component Spacing Patterns
+
+- **Card padding:** `--spacing-6` (24px)
+- **Button padding:** `--spacing-3 --spacing-6` (12px vertical, 24px horizontal)
+- **Section margins:** `--spacing-12` (48px)
+- **Form field spacing:** `--spacing-4` (16px between fields)
+
+---
+
+## Border Radius
+
+```css
+--radius-none: 0px;
+--radius-sm: 4px;      /* Form inputs */
+--radius-md: 8px;      /* Buttons, small cards */
+--radius-lg: 12px;     /* Cards */
+--radius-xl: 16px;     /* Large cards, modals */
+--radius-2xl: 24px;    /* Hero sections */
+--radius-full: 9999px; /* Pills, avatars */
+```
+
+---
+
+## Shadows
+
+Subtle elevation system for depth:
+
+```css
+/* Elevation levels */
+--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+```
+
+**Usage:**
+- Cards: `--shadow-md`
+- Dropdowns/Modals: `--shadow-lg`
+- Sticky headers: `--shadow-sm`
+
+---
+
+## Components
+
+### Buttons
+
+#### Primary Button
+```css
+.btn-primary {
+  background: var(--color-primary-600);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-700);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+```
+
+#### Secondary Button
+```css
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary-600);
+  border: 2px solid var(--color-primary-600);
+  padding: 10px 22px; /* Account for border */
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary-50);
+}
+```
+
+#### Ghost Button
+```css
+.btn-ghost {
+  background: transparent;
+  color: var(--color-gray-700);
+  border: none;
+  padding: 12px 24px;
+}
+
+.btn-ghost:hover {
+  background: var(--color-gray-100);
+}
+```
+
+### Form Inputs
+
+```css
+.input-field {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  color: var(--color-gray-900);
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.input-field::placeholder {
+  color: var(--color-gray-400);
+}
+
+/* Label */
+.input-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+/* Helper text */
+.input-helper {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  margin-top: var(--spacing-1);
+}
+
+/* Error state */
+.input-field.error {
+  border-color: var(--color-error);
+}
+
+.input-error-message {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  margin-top: var(--spacing-1);
+}
+```
+
+### Cards
+
+```css
+.card {
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-200);
+}
+
+/* KPI Card */
+.card-kpi {
+  background: white;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+}
+
+.card-kpi-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-kpi-value {
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  margin: var(--spacing-2) 0;
+}
+
+.card-kpi-trend {
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.trend-positive {
+  color: var(--color-success);
+}
+
+.trend-negative {
+  color: var(--color-error);
+}
+```
+
+### Navigation
+
+#### Sidebar
+```css
+.sidebar {
+  width: 260px;
+  background: var(--color-secondary-800);
+  height: 100vh;
+  padding: var(--spacing-6);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  color: var(--color-gray-300);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: var(--color-secondary-700);
+  color: white;
+}
+
+.sidebar-link.active {
+  background: var(--color-primary-600);
+  color: white;
+}
+```
+
+#### Top Header
+```css
+.header {
+  height: 64px;
+  background: white;
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: 0 var(--spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+}
+```
+
+### Data Visualization
+
+```css
+/* Chart Container */
+.chart-container {
+  background: white;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+}
+
+.chart-title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Chart colors for multi-line charts */
+--chart-color-1: #3B82F6; /* Primary blue */
+--chart-color-2: #10B981; /* Green */
+--chart-color-3: #F59E0B; /* Amber */
+--chart-color-4: #EF4444; /* Red */
+--chart-color-5: #8B5CF6; /* Purple */
+```
+
+---
+
+## Grid System
+
+12-column grid with consistent gutters:
+
+```css
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-cols-4,
+  .grid-cols-3,
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+---
+
+## Animation & Transitions
+
+```css
+/* Standard transition */
+--transition-fast: 150ms ease;
+--transition-base: 200ms ease;
+--transition-slow: 300ms ease;
+
+/* Micro-interactions */
+.interactive {
+  transition: all var(--transition-base);
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+}
+
+/* Loading skeleton */
+@keyframes skeleton-loading {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-200) 0px,
+    var(--color-gray-100) 40px,
+    var(--color-gray-200) 80px
+  );
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.2s ease-in-out infinite;
+}
+```
+
+---
+
+## Accessibility Guidelines
+
+> [!IMPORTANT]
+> **Color Contrast**
+> - All text must meet WCAG AA standards (4.5:1 for normal text, 3:1 for large text)
+> - Use color AND iconography for status indicators (not color alone)
+
+> [!IMPORTANT]
+> **Focus States**
+> - All interactive elements must have visible focus indicators
+> - Use `box-shadow` for focus rings, not `outline` for better control
+
+```css
+*:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+```
+
+> [!IMPORTANT]
+> **Screen Reader Support**
+> - Use semantic HTML (`<nav>`, `<main>`, `<section>`)
+> - Add ARIA labels for icon-only buttons
+> - Ensure all charts have text alternatives
+
+---
+
+## Implementation Checklist
+
+- [ ] Import Inter font from Google Fonts
+- [ ] Set up CSS custom properties (design tokens)
+- [ ] Create component library (buttons, inputs, cards)
+- [ ] Implement responsive grid system
+- [ ] Add micro-animations and transitions
+- [ ] Ensure all colors meet contrast requirements
+- [ ] Test keyboard navigation
+- [ ] Add skeleton loaders for async content
+
+---
+
+## 🎨 Design System Summary
+
+| Category | Specification |
+|----------|--------------|
+| **Primary Color** | Blue (#2563EB) |
+| **Font** | Inter (Google Fonts) |
+| **Base Font Size** | 16px |
+| **Spacing Unit** | 4px |
+| **Border Radius** | 8px (standard), 12px (cards) |
+| **Shadow** | Subtle, layered elevation |
+| **Grid** | 12-column, responsive |
+| **Breakpoints** | 640px, 768px, 1024px, 1280px |
+
+---
+
+✅ **Phase 3 Complete** - Comprehensive UI Design System Ready
+
+This design system provides all the tokens, components, and patterns needed to build a consistent, professional, and accessible healthcare dashboard.

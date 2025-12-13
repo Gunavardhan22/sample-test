@@ -1,0 +1,221 @@
+# Phase 2: UX and UI Design
+## Step 6: Low-Fidelity Wireframes
+
+---
+
+## Wireframe 1: Landing Page
+
+![Landing Page Wireframe](C:/Users/gunav/.gemini/antigravity/brain/e3f6fae5-f2cf-4784-bd59-ebce76193e02/wireframe_landing_page_1765624988421.png)
+
+### Layout Structure
+- **Header Navigation** (fixed)
+  - Logo (left)
+  - Navigation links: Features, Pricing, About, Contact
+  - "Sign In" button (right, primary color)
+
+- **Hero Section** (above the fold)
+  - Main headline: "Healthcare Analytics Dashboard"
+  - Subheading: "Real-time insights for better patient outcomes"
+  - Primary CTA: "Get Started" button
+  - Secondary CTA: "Watch Demo" link
+  - Hero image/illustration (right side)
+
+- **Features Section**
+  - 3-column grid of feature cards
+  - Each card: Icon, title, short description
+
+- **Footer**
+  - Company info, links, social media
+
+### Key Elements
+- Clear value proposition in first 3 seconds
+- Minimal navigation to reduce cognitive load
+- Strong visual hierarchy (headline → CTA → features)
+
+### Responsive Behavior
+- Mobile: Single column, stacked layout
+- Tablet: 2-column feature grid
+- Desktop: Full 3-column layout
+
+---
+
+## Wireframe 2: Login Page
+
+![Login Page Wireframe](C:/Users/gunav/.gemini/antigravity/brain/e3f6fae5-f2cf-4784-bd59-ebce76193e02/wireframe_login_page_1765625013012.png)
+
+### Layout Structure
+- **Centered Card** (max-width: 400px)
+  - Application logo
+  - Page title: "Sign In"
+  - Email input field (with label)
+  - Password input field (with label, toggle visibility icon)
+  - "Remember me" checkbox
+  - "Sign In" button (full-width, primary)
+  - "Forgot password?" link (right-aligned)
+  - Divider line with "or"
+  - SSO options: "Sign in with Google" / "Sign in with Microsoft"
+
+### Key Elements
+- Autofocus on email field
+- Clear error messages below each field
+- Loading spinner on button during authentication
+- Link to "Create Account" if applicable
+
+### Responsive Behavior
+- Mobile: Full-width card with padding
+- Desktop: Centered card with background gradient
+
+---
+
+## Wireframe 3: Main Dashboard (Home)
+
+![Main Dashboard Wireframe](C:/Users/gunav/.gemini/antigravity/brain/e3f6fae5-f2cf-4784-bd59-ebce76193e02/wireframe_dashboard_main_1765625046169.png)
+
+### Layout Structure
+- **Left Sidebar Navigation** (fixed, collapsible)
+  - Logo at top
+  - Navigation items with icons:
+    - Dashboard (home icon)
+    - Departments (grid icon)
+    - Reports (document icon)
+    - Analytics (chart icon)
+    - Settings (gear icon)
+  - User profile at bottom
+
+- **Top Header Bar** (fixed)
+  - Breadcrumb navigation (left)
+  - Search bar (center)
+  - Notification bell with badge (right)
+  - User avatar with dropdown (right)
+
+- **Main Content Area**
+  - **KPI Cards Row** (4 cards in grid)
+    - Card 1: Patient Census (large number + trend indicator)
+    - Card 2: Bed Availability (percentage + visual gauge)
+    - Card 3: Avg Wait Time (time + comparison to yesterday)
+    - Card 4: Revenue (currency + daily increase/decrease)
+  
+  - **Chart Section** (2-column grid)
+    - Left: Line chart - "Patient Admissions (Last 7 Days)"
+    - Right: Donut chart - "Department Distribution"
+  
+  - **Department Summary Table**
+    - Columns: Department, Occupancy, Wait Time, Staff On Duty, Status
+    - Sortable headers
+    - Row actions (view details icon)
+
+### Key Elements
+- Color-coded status indicators (green/yellow/red)
+- "Last updated: 2 minutes ago" timestamp
+- Skeleton loaders for charts while data loads
+- Hover tooltips on chart data points
+
+### Responsive Behavior
+- Mobile: Sidebar collapses to hamburger menu, KPI cards stack vertically
+- Tablet: 2-column KPI grid, stacked charts
+- Desktop: Full 4-column KPI grid, side-by-side charts
+
+---
+
+## Wireframe 4: Department Detail View
+
+![Department Detail Wireframe](C:/Users/gunav/.gemini/antigravity/brain/e3f6fae5-f2cf-4784-bd59-ebce76193e02/wireframe_detail_view_1765625072527.png)
+
+### Layout Structure
+- **Breadcrumb Navigation**
+  - Dashboard > Departments > Emergency Department
+
+- **Page Header**
+  - Department name (left)
+  - "Export Report" button (right)
+
+- **Filter Controls Bar**
+  - Date range picker (last 7 days, last 30 days, custom)
+  - Department dropdown (if viewing multiple)
+  - "Apply Filters" button
+
+- **Metrics Overview** (3-card grid)
+  - Card 1: Current Occupancy
+  - Card 2: Avg Wait Time Today
+  - Card 3: Patient Throughput
+
+- **Main Chart Area** (large)
+  - Multi-line chart: Wait Times by Hour of Day
+  - Legend with toggle for different metrics
+  - Zoom controls
+
+- **Data Table**
+  - Detailed patient flow data
+  - Columns: Time, Admissions, Discharges, Current Census, Avg Wait
+  - Pagination controls
+
+### Key Elements
+- Persistent filters (stays applied when navigating)
+- Chart interaction: click-to-drill-down
+- Export to CSV/PDF buttons
+
+### Responsive Behavior
+- Mobile: Charts take full width, filters collapse to accordion
+- Desktop: Side-by-side layout with filters in top bar
+
+---
+
+## Information Architecture
+
+```mermaid
+graph TD
+    A[Landing Page] --> B[Login]
+    B --> C[Dashboard Home]
+    C --> D[Departments]
+    C --> E[Reports]
+    C --> F[Analytics]
+    C --> G[Settings]
+    
+    D --> D1[Emergency Dept]
+    D --> D2[ICU]
+    D --> D3[Surgery]
+    
+    E --> E1[Weekly Summary]
+    E --> E2[Custom Report Builder]
+    
+    F --> F1[Trends Analysis]
+    F --> F2[Predictive Models]
+    
+    G --> G1[User Profile]
+    G --> G2[Notification Preferences]
+    G --> G3[Data Export Settings]
+```
+
+---
+
+## Design Principles for Wireframes
+
+> [!TIP]
+> **Visual Hierarchy**
+> - Most important information (KPIs) at the top
+> - Charts and visualizations in the middle
+> - Detailed tables at the bottom
+
+> [!TIP]
+> **Consistent Patterns**
+> - All data cards follow same structure: Icon, Label, Value, Trend
+> - All filters use same positioning and style
+> - All actions (export, refresh) aligned to the right
+
+> [!TIP]
+> **Mobile-First Approach**
+> - Design for smallest screen first, then scale up
+> - Ensure all critical actions accessible on mobile
+> - Use progressive disclosure for advanced features
+
+---
+
+## Next Steps
+
+✅ **Wireframes Complete** - Ready for Phase 3: Visual Design System
+
+The wireframes provide:
+- Clear page structure and navigation
+- Content hierarchy and information flow
+- Interaction patterns and user flows
+- Foundation for high-fidelity designs

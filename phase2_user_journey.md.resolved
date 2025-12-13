@@ -1,0 +1,261 @@
+# Phase 2: UX and UI Design
+## Step 5: User Journey Map
+
+---
+
+## Journey Overview: Sarah's Morning Dashboard Check
+
+**Persona:** Sarah Chen (Healthcare Administrator)  
+**Goal:** Get a complete operational overview in under 5 minutes  
+**Scenario:** Monday morning, 7:15 AM, checking weekend performance before leadership meeting
+
+---
+
+## Journey Stages
+
+```mermaid
+graph LR
+    A[Landing Page] --> B[Login]
+    B --> C[Dashboard Home]
+    C --> D[Explore Metrics]
+    D --> E[Generate Report]
+    E --> F[Exit/Continue]
+    
+    style A fill:#E0E7FF
+    style B fill:#DBEAFE
+    style C fill:#D1FAE5
+    style D fill:#FEF3C7
+    style E fill:#FED7AA
+    style F fill:#E5E7EB
+```
+
+---
+
+## Stage 1: Landing Page (Awareness)
+
+### User Actions
+- Types URL or clicks bookmark
+- Scans landing page for value proposition
+- Clicks "Sign In" or "Get Started"
+
+### Touchpoints
+- **Page:** Landing page
+- **Elements:** Hero section, feature highlights, login button
+
+### Thoughts & Emotions
+- 😐 **Neutral** - "Let me check the dashboard before my meeting"
+- 🤔 **Slightly curious** - "Looks professional, hopefully this is faster than the old system"
+
+### Pain Points
+- If landing page is slow to load, may refresh or abandon
+- If login button is hard to find, causes friction
+
+### Opportunities
+- Clear, prominent "Sign In" button
+- Quick load time (<1s)
+- Trust indicators (security badges, testimonials if relevant)
+
+---
+
+## Stage 2: Authentication (Entry)
+
+### User Actions
+- Enters email and password
+- Clicks "Sign In"
+- (Optional) Uses SSO/OAuth if available
+
+### Touchpoints
+- **Page:** Login page
+- **Elements:** Email field, password field, "Remember me" checkbox, "Forgot password" link
+
+### Thoughts & Emotions
+- 😌 **Relieved** - "Good, I remember my password"
+- 😟 **Anxious** (if error) - "Did I mistype? Is the system down?"
+
+### Pain Points
+- Unclear error messages ("Invalid credentials" vs "Email not found")
+- No SSO option forces manual login every time
+- Forgot password flow is cumbersome
+
+### Opportunities
+- Implement SSO for seamless login
+- Clear, actionable error messages
+- "Remember me" feature for convenience
+- Loading state during authentication
+
+---
+
+## Stage 3: Dashboard Home (Initial Impression)
+
+### User Actions
+- Scans page for critical alerts (red flags)
+- Reads top-level KPIs (bed availability, wait times, revenue)
+- Checks timestamp of last data refresh
+
+### Touchpoints
+- **Page:** Main dashboard
+- **Elements:** KPI cards, charts, department summary, notification bell
+
+### Thoughts & Emotions
+- 😊 **Satisfied** - "Perfect, everything I need is right here"
+- 😮 **Surprised** (positive) - "Wow, this is much cleaner than the old system"
+- 🚨 **Alarmed** (if critical alert) - "ED wait time is 2x normal, need to investigate"
+
+### Pain Points
+- Information overload if too many metrics shown at once
+- Unclear what data is real-time vs. cached
+- No indication of what requires immediate attention
+
+### Opportunities
+- Hierarchy of information (most critical at top)
+- Visual indicators for alerts (color coding, icons)
+- "Last updated" timestamp for transparency
+- Skeleton loaders for data fetching
+
+---
+
+## Stage 4: Explore Metrics (Deep Dive)
+
+### User Actions
+- Clicks on specific KPI card (e.g., "ED Wait Times")
+- Changes date range to "Last 7 Days"
+- Filters by department or shift
+- Hovers over chart to see exact values
+
+### Touchpoints
+- **Page:** Department detail view or expanded chart modal
+- **Elements:** Interactive charts, filters, drill-down buttons
+
+### Thoughts & Emotions
+- 🤓 **Engaged** - "Interesting, wait times spiked on Saturday night"
+- 💡 **Insightful** - "This pattern suggests we need more staff on weekends"
+- 😤 **Frustrated** (if slow) - "Why is this taking so long to load?"
+
+### Pain Points
+- Slow chart rendering on large datasets
+- Cannot compare multiple metrics side-by-side
+- Unclear which filters apply to which views
+
+### Opportunities
+- Fast, responsive charts with debouncing
+- Multi-metric comparison view
+- Breadcrumb navigation to show current context
+- Persistent filters with visual indication
+
+---
+
+## Stage 5: Generate Report (Export)
+
+### User Actions
+- Clicks "Export" or "Download Report"
+- Selects format (PDF or CSV)
+- Chooses date range and metrics to include
+- Downloads file
+
+### Touchpoints
+- **Page:** Export modal or dropdown
+- **Elements:** Format selector, date picker, metric checkboxes, "Download" button
+
+### Thoughts & Emotions
+- ✅ **Accomplished** - "Got what I needed, ready for the meeting"
+- 😊 **Confident** - "This data will help me make my case to the board"
+
+### Pain Points
+- Export takes too long (>10 seconds)
+- Downloaded file is poorly formatted or missing data
+- Cannot customize report template
+
+### Opportunities
+- Background export with progress indicator
+- Preview before download
+- Save export presets for recurring reports
+- Auto-email reports on schedule
+
+---
+
+## Stage 6: Exit/Continue Work
+
+### User Actions
+- Logs out or closes browser
+- (Or) Navigates to another section of dashboard
+- Sets up alerts for future monitoring
+
+### Touchpoints
+- **Page:** Any page (logout from navbar)
+- **Elements:** Logout button, navigation menu
+
+### Thoughts & Emotions
+- 😌 **Satisfied** - "This was quick and painless"
+- 🎯 **Prepared** - "I'm ready for the leadership meeting"
+
+### Pain Points
+- No way to save current view for later
+- Cannot set up recurring alerts
+
+### Opportunities
+- Saved views/bookmarks
+- Alert configuration (email/SMS when metric exceeds threshold)
+- Quick navigation to return to specific analysis
+
+---
+
+## Full User Journey Visualization
+
+```mermaid
+journey
+    title Sarah's Morning Dashboard Review
+    section Landing
+      Visit landing page: 3: Sarah
+      Find login button: 4: Sarah
+    section Login
+      Enter credentials: 3: Sarah
+      Authenticate: 4: Sarah
+    section Dashboard
+      View KPIs: 5: Sarah
+      Check alerts: 5: Sarah
+    section Explore
+      Filter by department: 4: Sarah
+      Analyze trends: 5: Sarah
+    section Export
+      Generate report: 5: Sarah
+      Download PDF: 5: Sarah
+    section Complete
+      Log out: 5: Sarah
+```
+
+**Emotion Scale:** 1 = Very Frustrated, 3 = Neutral, 5 = Very Satisfied
+
+---
+
+## Key Insights
+
+> [!IMPORTANT]
+> **Critical Success Factors:**
+> 1. **Speed is paramount** - Every action should feel instant (<200ms for interactions)
+> 2. **Clarity over complexity** - Show only essential information, hide advanced features behind "More" options
+> 3. **Trust through transparency** - Always show data freshness and loading states
+
+> [!TIP]
+> **Quick Wins:**
+> - Add skeleton loaders for all async operations
+> - Implement keyboard shortcuts for power users (e.g., `Cmd+K` for search)
+> - Provide "Tour" or "What's New" tooltip for first-time users
+
+---
+
+## Journey Map for Other Personas
+
+### Marcus (Clinical Manager) - Mid-Shift Check
+1. **Mobile login** → 2. **Real-time ED dashboard** → 3. **Patient flow drill-down** → 4. **Staff allocation adjustment**
+
+**Key Difference:** Mobile-first, needs real-time updates, shorter session length (2-3 minutes)
+
+### Emily (Data Analyst) - Quarterly Analysis
+1. **Login** → 2. **Advanced filters setup** → 3. **Bulk data export** → 4. **API integration** → 5. **Custom visualization build**
+
+**Key Difference:** Longer session (30-60 minutes), needs raw data access, values customization over simplicity
+
+---
+
+> [!NOTE]
+> Next Step: Use these journey insights to inform wireframe design in Step 6
